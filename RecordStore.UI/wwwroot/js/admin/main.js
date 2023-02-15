@@ -11,6 +11,9 @@
         },
         products: []
     },
+    mounted() { //odpala funkcje przy starcie strony
+        this.getProducts();  
+        },
     methods: {
         getProducts() {
             this.loading = true;
@@ -27,9 +30,15 @@
         },
         getProduct(id) {
             this.loading = true;
-            axios.get("/Admin/products" + id)
+            axios.get("/Admin/products/" + id)
                 .then(res => {
-                    this.products = res.data;
+                    var product = res.data;
+                    this.productModel = {
+                        id: product.id,
+                        name: product.name,
+                        description: product.description,
+                        value: product.value
+                    };
                 })
                 .catch(err => {
                     console.log(err);
@@ -52,14 +61,9 @@
                     this.loading = false;
                 });
         },
-        editProduct(product, index) {
+        editProduct(id, index) {
             this.objectIndex = index;
-            this.productModel = {
-                id: product.id,
-                name: product.name,
-                description: product.description,
-                value: product.value
-            };
+            this.getProduct(id);
         },
         updateProduct() {
             this.loading = true;

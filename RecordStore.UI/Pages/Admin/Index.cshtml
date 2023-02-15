@@ -10,12 +10,11 @@
 }
 
 <div id="app">
-    <button v-on:click="getProducts">Get Products</button>
-
+    List of Products
     <div>
         <p v-for="(product, index) in products">
-            {{ product.id }} | {{ product.name }} | {{ product.description }} | {{ product.value }}
-            <button v-on:click="editProduct(product, index)">Edit</button>
+            {{ product.id }} | {{ product.name }} | {{ product.value }}
+            <button v-on:click="editProduct(product.id, index)">Edit</button>
             <button v-on:click="deleteProduct(product.id, index)">Remove</button>
         </p>
     </div>
