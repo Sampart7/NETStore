@@ -9,23 +9,52 @@
     <script src="~/js/admin/main.js"></script>
 }
 
-<div id="app">
-    List of Products
-    <div>
-        <p v-for="(product, index) in products">
-            {{ product.id }} | {{ product.name }} | {{ product.value }}
-            <button v-on:click="editProduct(product.id, index)">Edit</button>
-            <button v-on:click="deleteProduct(product.id, index)">Remove</button>
-        </p>
+<div class="container my-5" id="app">
+    <div v-if="!editing">
+        <h1 class="mb-3">List of Products</h1><button v-on:click="newProduct">Add New Product</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>VALUE</th>
+                    <th>BUTTON</th>
+                    <th>BUTTON</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(product, index) in products" class="table-secondary">
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.value }}$</td>
+                    <td><button v-on:click="editProduct(product.id, index)">Edit</button></td>
+                    <td><button v-on:click="deleteProduct(product.id, index)">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div>
-        <input v-model="productModel.name"/>
-        <input v-model="productModel.description" />
-        <input v-model="productModel.value"/>
+    <div v-else>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Name</span>
+            <input type="text" class="form-control" v-model="productModel.name">
+        </div>
 
-        <button v-on:click ="createProduct" v-if="!productModel.id">Create Product</button>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Description</span>
+            <input type="text" class="form-control" v-model="productModel.description">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Value</span>
+            <input type="text" class="form-control" v-model="productModel.value">
+            <span class="input-group-text">$</span>
+        </div>
+
+        <button v-on:click="createProduct" v-if="!productModel.id">Create Product</button>
         <button v-on:click="updateProduct" v-else>Update Product</button>
-    </div>
 
+        <button v-on:click="cancel">Cancel</button>
+
+    </div>
 </div>
