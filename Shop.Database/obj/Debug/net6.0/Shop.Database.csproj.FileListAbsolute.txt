@@ -1,0 +1,17 @@
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\bin\Debug\net6.0\Shop.Database.deps.json
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\bin\Debug\net6.0\Shop.Database.dll
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\bin\Debug\net6.0\Shop.Database.pdb
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\bin\Debug\net6.0\Shop.Domain.dll
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\bin\Debug\net6.0\Shop.Domain.pdb
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\obj\Debug\net6.0\Shop.Database.csproj.AssemblyReference.cache
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\obj\Debug\net6.0\Shop.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\obj\Debug\net6.0\Shop.Database.AssemblyInfoInputs.cache
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\obj\Debug\net6.0\Shop.Database.AssemblyInfo.cs
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\obj\Debug\net6.0\Shop.Database.csproj.CoreCompileInputs.cache
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\obj\Debug\net6.0\Shop.Database.csproj.CopyComplete
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\obj\Debug\net6.0\Shop.Database.dll
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\obj\Debug\net6.0\refint\Shop.Database.dll
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\obj\Debug\net6.0\Shop.Database.pdb
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\obj\Debug\net6.0\ref\Shop.Database.dll
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\bin\Debug\net6.0\Shop.Database.runtimeconfig.json
+C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Database\obj\Debug\net6.0\Shop.Database.genruntimeconfig.cache

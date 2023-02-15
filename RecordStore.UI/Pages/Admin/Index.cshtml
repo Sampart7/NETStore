@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+}
+
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="~/js/admin/main.js"></script>
+}
+
+<div id="app">
+    <button v-on:click="getProducts">Get Products</button>
+
+    <div>
+        <p v-for="(product, index) in products">
+            {{ product.id }} | {{ product.name }} | {{ product.description }} | {{ product.value }}
+            <button v-on:click="editProduct(product, index)">Edit</button>
+            <button v-on:click="deleteProduct(product.id, index)">Remove</button>
+        </p>
+    </div>
+
+    <div>
+        <input v-model="productModel.name"/>
+        <input v-model="productModel.description" />
+        <input v-model="productModel.value"/>
+
+        <button v-on:click ="createProduct" v-if="!productModel.id">Create Product</button>
+        <button v-on:click="updateProduct" v-else>Update Product</button>
+    </div>
+
+</div>
