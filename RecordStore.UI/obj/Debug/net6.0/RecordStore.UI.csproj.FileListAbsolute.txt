@@ -70,3 +70,4 @@ C:\Users\Michał Janaszek\Desktop\RecordStore\RecordStore.UI\obj\Debug\net6.0\re
 C:\Users\Michał Janaszek\Desktop\RecordStore\RecordStore.UI\obj\Debug\net6.0\RecordStore.UI.pdb
 C:\Users\Michał Janaszek\Desktop\RecordStore\RecordStore.UI\obj\Debug\net6.0\RecordStore.UI.genruntimeconfig.cache
 C:\Users\Michał Janaszek\Desktop\RecordStore\RecordStore.UI\obj\Debug\net6.0\ref\RecordStore.UI.dll
+C:\Users\Michał Janaszek\Desktop\RecordStore\RecordStore.UI\obj\Debug\net6.0\scopedcss\Pages\Admin\_AdminLayout.cshtml.rz.scp.css
