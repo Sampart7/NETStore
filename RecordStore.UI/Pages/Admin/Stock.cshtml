@@ -2,4 +2,39 @@
 @model StockModel
 @{
 }
+
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="~/js/admin/stock.js"></script>
+}
 <h1>STOCK</h1>
+
+<div id="app">
+    <table class="table">
+        <tr v-for="product in products" v-on:click="selectProduct(product)">
+            <td>{{ product.description }}</td>
+        </tr>
+    </table>
+
+    <div v-if="selectedProduct">
+        <h2 class="title">SELECTED PRODUCT</h2>
+        <table class="table">
+            <tr v-for="(stock, index) in selectedProduct.stock">
+                <td><input class="input" v-model="stock.description" /></td>
+                <td><input class="input" v-model="stock.qty" /></td>
+                <td><button v-on:click="deleteStock(stock.id, index)">Delete Products</button></td>
+                <td><button v-on:click="updateStock">Update Products</button></td>
+            </tr>
+        </table>
+
+        <h2 class="title">New Stock</h2>
+        <table class="table">
+            <tr>
+                <td><input class="input" v-model="newStock.description" /></td>
+                <td><input class="input" v-model="newStock.qty" /></td>
+                <td><button v-on:click="addStock">Add</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

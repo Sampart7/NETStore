@@ -20,9 +20,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/index">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" asp-area="" asp-page="/Admin/Index">Admin-beta</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" asp-area="" asp-page="/Admin/Index" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Admin
@@ -30,15 +27,9 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" asp-page="/Admin/Index">Products</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" asp-page="/Admin/Index">Orders</a></li>
-                            <li><a class="dropdown-item" asp-page="/Admin/Index">Stock</a></li>
+                            <li><a class="dropdown-item" asp-page="/Admin/Orders">Orders</a></li>
+                            <li><a class="dropdown-item" asp-page="/Admin/Stock">Stock</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -64,6 +55,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
