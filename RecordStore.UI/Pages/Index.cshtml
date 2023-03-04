@@ -16,13 +16,13 @@
     @{
         foreach(var product in Model.Products)
         {
-                <tbody>
-                    <tr>
-                        <td>@product.Name</td>
-                        <td>@product.Description</td>
-                        <td>@product.Value</td>
-                    </tr>
-                </tbody>
+            <tbody class="table-secondary">
+                <tr>
+                    <td><a asp-page="Product" asp-route-name="@product.Name.Replace(" ", "-")" class="link-info">@product.Name</a></td>
+                    <td>@product.Description</td>
+                    <td>@product.Value</td>
+                </tr>
+            </tbody>
         }
     }
     </table>

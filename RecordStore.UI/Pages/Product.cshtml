@@ -1,0 +1,32 @@
+﻿@page "{name}"
+@model ProductModel
+@{
+}
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>DESCRIPTION</th>
+                <th>VALUE</th>
+                <th>STOCK</th>
+            </tr>
+        </thead>
+        <tbody class="table-secondary">
+            <tr>
+                <td>@Model.Product.Name</td>
+                <td>@Model.Product.Description</td>
+                <td>@Model.Product.Value</td>
+                <td>
+                    <select>
+                        @foreach (var stock in Model.Product.Stock)
+                        {
+                            <option value="@stock.Id">@stock.Description</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
