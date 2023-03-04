@@ -10,7 +10,9 @@
                 <th>NAME</th>
                 <th>DESCRIPTION</th>
                 <th>VALUE</th>
-                <th>STOCK</th>
+                <form method="post">
+                    <th>STOCK</th>
+                </form>
             </tr>
         </thead>
         <tbody class="table-secondary">
@@ -19,12 +21,15 @@
                 <td>@Model.Product.Description</td>
                 <td>@Model.Product.Value</td>
                 <td>
-                    <select>
-                        @foreach (var stock in Model.Product.Stock)
-                        {
-                            <option value="@stock.Id">@stock.Description</option>
-                        }
-                    </select>
+                    <form method="post">
+                        <select asp-for="ProductTest.Id">
+                            @foreach (var stock in Model.Product.Stock)
+                            {
+                                <option value="@stock.Id">@stock.Description</option>
+                            }
+                        </select>
+                        <button type="submit">Submit</button>
+                    </form>
                 </td>
             </tr>
         </tbody>
