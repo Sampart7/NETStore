@@ -71,3 +71,4 @@ C:\Users\Michał Janaszek\Desktop\RecordStore\RecordStore.UI\obj\Debug\net6.0\Re
 C:\Users\Michał Janaszek\Desktop\RecordStore\RecordStore.UI\obj\Debug\net6.0\RecordStore.UI.genruntimeconfig.cache
 C:\Users\Michał Janaszek\Desktop\RecordStore\RecordStore.UI\obj\Debug\net6.0\ref\RecordStore.UI.dll
 C:\Users\Michał Janaszek\Desktop\RecordStore\RecordStore.UI\obj\Debug\net6.0\scopedcss\Pages\Admin\_AdminLayout.cshtml.rz.scp.css
+C:\Users\Michał Janaszek\Desktop\RecordStore\RecordStore.UI\bin\Debug\net6.0\Newtonsoft.Json.dll

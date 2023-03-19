@@ -22,12 +22,16 @@
                 <td>@Model.Product.Value</td>
                 <td>
                     <form method="post">
-                        <select asp-for="ProductTest.Id">
+                        <select asp-for="CartViewModel.StockId">
                             @foreach (var stock in Model.Product.Stock)
                             {
                                 <option value="@stock.Id">@stock.Description</option>
                             }
                         </select>
+
+                        <label>Qty:</label>
+                        <input asp-for="CartViewModel.Qty"/>
+
                         <button type="submit">Submit</button>
                     </form>
                 </td>

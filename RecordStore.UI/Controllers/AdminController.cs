@@ -15,6 +15,8 @@ namespace RecordStore.UI.Controllers
             _ctx = ctx;
         }
 
+        //Products Controller
+
         [HttpGet("products")]
         public IActionResult GetProducts() => Ok(new GetProducts(_ctx).Do());
 
@@ -30,7 +32,7 @@ namespace RecordStore.UI.Controllers
         [HttpPut("products")]
         public async Task<IActionResult> UpdateProduct([FromBody] UpdateProduct.Request request) => Ok((await new UpdateProduct(_ctx).Do(request)));
 
-        //////////////////////////////////////////////////////////////////////////
+        //Stocks Controller
 
         [HttpGet("stocks")]
         public IActionResult GetStock() => Ok(new GetStock(_ctx).Do());

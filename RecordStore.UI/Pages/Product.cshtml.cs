@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Shop.Application.Cart;
 using Shop.Application.Products;
 using Shop.Database;
 
@@ -15,12 +16,7 @@ namespace RecordStore.UI.Pages
         }
 
         [BindProperty]
-        public Test ProductTest { get; set; }
-
-        public class Test
-        {
-            public string Id { get; set; }
-        }
+        public AddToCart.Request CartViewModel { get; set; }
 
         public GetProduct.ProductViewModel Product { get; set; }
 
@@ -39,11 +35,10 @@ namespace RecordStore.UI.Pages
 
         public IActionResult OnPost() 
         {
-            var current_id = HttpContext.Session.GetString("id");
-            HttpContext.Session.SetString("id", ProductTest.Id);
+            new AddToCart(HttpContext.Session).Do(CartViewModel);
 
 
-            return RedirectToPage("Index");
+            return RedirectToPage("Cart");
         }
     }
 }
