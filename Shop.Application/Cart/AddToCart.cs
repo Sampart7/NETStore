@@ -26,13 +26,28 @@ namespace Shop.Application.Cart
 
         public void Do(Request request) 
         {
-            var cartProduct = new CartProduct
-            {
-                StockId = request.StockId,
-                Qty = request.Qty,
-            };
+            var cartList = new List<CartProduct>();
+            var stringObject = _session.GetString("cart");
 
-            var stringObject = JsonConvert.SerializeObject(cartProduct); // Sesja nie przyjmie zwykłego requesta w postaci stringa więc konwertujemy go na obiekt
+            if(!string.IsNullOrEmpty(stringObject))
+            {
+                cartList = JsonConvert.DeserializeObject<List<CartProduct>>(stringObject);
+            }
+
+            if(cartList.Any(x => x.StockId == request.StockId))
+            {
+                cartList.Find(x => x.StockId == request.StockId).Qty += request.Qty;
+            }
+            else
+            {
+                cartList.Add(new CartProduct
+                {
+                    StockId = request.StockId,
+                    Qty = request.Qty,
+                });
+            }
+
+            stringObject = JsonConvert.SerializeObject(cartList); // Sesja nie przyjmie zwykłego requesta w postaci stringa więc konwertujemy go na obiekt
 
             _session.SetString("cart", stringObject);
 
