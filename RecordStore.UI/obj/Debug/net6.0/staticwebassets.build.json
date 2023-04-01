@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oqewqWnXHRpsvEbUgGNmBY1USlRSqnMgBZtL0xxZ2mk=",
+  "Hash": "fCKey6v264guaI3LDs8iYFKgKde0Y75oVkyKLtNvC0s=",
   "Source": "RecordStore.UI",
   "BasePath": "_content/RecordStore.UI",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Michał Janaszek\\Desktop\\RecordStore\\RecordStore.UI\\wwwroot\\js\\admin\\main.js",
+      "SourceId": "RecordStore.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Michał Janaszek\\Desktop\\RecordStore\\RecordStore.UI\\wwwroot\\",
+      "BasePath": "_content/RecordStore.UI",
+      "RelativePath": "js/admin/main.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\admin\\main.js"
     },
     {
       "Identity": "C:\\Users\\Michał Janaszek\\Desktop\\RecordStore\\RecordStore.UI\\wwwroot\\js\\admin\\products.js",
