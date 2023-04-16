@@ -10,6 +10,10 @@ namespace Shop.Domain.Models
     {
         public int Id { get; set; }
         public string OrderRef { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
         public string Addres1 { get; set; }
         public string Addres2 { get; set; }
         public string City { get; set; }

@@ -38,16 +38,16 @@ namespace Shop.Application.Products
 
         public class ProductViewModel
         {
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public string Value { get; set; }
-            public IEnumerable<StockViewModel> Stock { get; set; }
+            public string Name { get; set; } = string.Empty;
+            public string Description { get; set; } = string.Empty;
+            public string Value { get; set; } = string.Empty;
+            public IEnumerable<StockViewModel>? Stock { get; set; }
         }
 
         public class StockViewModel
         {
             public int Id { get; set; }
-            public string Description { get; set; }
+            public string Description { get; set; } = string.Empty;
             public bool InStock { get; set; }
         }
     }

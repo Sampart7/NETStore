@@ -1,0 +1,42 @@
+﻿@page
+@model RecordStore.UI.Pages.Checkout.CustomerInformationModel
+@{
+}
+<div>
+    <form method="post">
+        <div>
+        <input asp-for="CustomerInformation.FirstName" />
+        <span asp-asp-validation-for="CustomerInformation.FirstName"></span>
+        </div>
+        <div>
+        <input asp-for="CustomerInformation.LastName" />
+        <span asp-asp-validation-for="CustomerInformation.LastName"></span>
+        </div>
+        <div>
+        <input asp-for="CustomerInformation.Email" />
+        <span asp-asp-validation-for="CustomerInformation.Email"></span>
+        </div>
+        <div>
+        <input asp-for="CustomerInformation.PhoneNumber" />
+        <span asp-asp-validation-for="CustomerInformation.PhoneNumber"></span>
+        </div>
+        <div>
+        <input asp-for="CustomerInformation.Addres1" />
+        <span asp-asp-validation-for="CustomerInformation.Addres1"></span>
+        </div>
+        <div>
+        <input asp-for="CustomerInformation.Addres2" />
+        <span asp-asp-validation-for="CustomerInformation.Addres2"></span>
+        </div>
+        <div>
+        <input asp-for="CustomerInformation.City" />
+        <span asp-asp-validation-for="CustomerInformation.City"></span>
+        </div>
+        <div>
+        <input asp-for="CustomerInformation.PostCode" />
+        <span asp-asp-validation-for="CustomerInformation.PostCode"></span>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
