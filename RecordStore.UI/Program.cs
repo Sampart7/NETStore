@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Shop.Database;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,17 @@ builder.Services.AddSession(options =>
     options.Cookie.Name = "Cart";
     options.Cookie.MaxAge = TimeSpan.FromDays(7);
 });
+
+StripeConfiguration.ApiKey = configuration.GetSection("Stripe")["SecretKey"];
+
+var options = new PaymentIntentCreateOptions
+{
+    Amount = 1099,
+    Currency = "usd",
+    PaymentMethodTypes = new List<string> { "link", "card" },
+};
+var service = new PaymentIntentService();
+service.Create(options);
 
 var app = builder.Build();
 

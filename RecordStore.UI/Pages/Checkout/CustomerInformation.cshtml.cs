@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Shop.Application.Cart;
+using System.ComponentModel;
 
 namespace RecordStore.UI.Pages.Checkout
 {
@@ -8,6 +9,13 @@ namespace RecordStore.UI.Pages.Checkout
     {
         [BindProperty]
         public AddCustomerInformation.Request CustomerInformation { get; set; }
+
+        public CustomerInformationModel(IConfiguration config)
+        {
+            PublicKey = config["Stripe:PublicKey"].ToString();
+        }
+
+        public string PublicKey { get; }
 
         public IActionResult OnGet()
         {
