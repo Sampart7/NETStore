@@ -42,7 +42,19 @@ namespace Shop.Application.Cart
 
         public void Do(Request request)
         {
-            var stringObject = JsonConvert.SerializeObject(request);
+            var customerInfromation = new CustomerInformation
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Email = request.Email,
+                PhoneNumber = request.PhoneNumber,
+                Addres1 = request.Addres1,
+                Addres2 = request.Addres2,
+                City = request.City,
+                PostCode = request.PostCode,
+            };
+
+            var stringObject = JsonConvert.SerializeObject(customerInfromation);
 
             _session.SetString("customer-info", stringObject);
         }

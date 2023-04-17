@@ -2,18 +2,22 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 using Shop.Application.Cart;
+using Shop.Database;
 using Stripe;
 
 namespace RecordStore.UI.Pages.Checkout
 {
     public class PaymentModel : PageModel
     {
-        public PaymentModel(IConfiguration config)
+        public PaymentModel(IConfiguration config, ApplicationDbContext ctx)
         {
             PublicKey = config["Stripe:PublicKey"].ToString();
+            _ctx = ctx;
         }
 
         public string PublicKey { get; }
+
+        private ApplicationDbContext _ctx;
 
         public IActionResult OnGet()
         {
@@ -32,6 +36,8 @@ namespace RecordStore.UI.Pages.Checkout
             var customers = new CustomerService();
             var charges = new ChargeService();
 
+            var CartOrder = new GetOrder(HttpContext.Session, _ctx).Do();
+
             var customer = customers.Create(new CustomerCreateOptions
             {
                 Email= stripeEmail,
@@ -40,8 +46,8 @@ namespace RecordStore.UI.Pages.Checkout
 
             var charge = charges.Create(new ChargeCreateOptions
             {
-                Amount = 200,
-                Description = "Simple charge",
+                Amount = CartOrder.GetTotalCharge(),
+                Description = "Nice",
                 Currency = "pln",
                 Customer = customer.Id,
             });
