@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 using Shop.Application.Cart;
+using Shop.Application.Orders;
 using Shop.Database;
 using Stripe;
 
@@ -31,7 +32,7 @@ namespace RecordStore.UI.Pages.Checkout
             return Page();
         }
 
-        public IActionResult OnPost(string stripeEmail, string stripeToken)
+        public async Task<IActionResult> OnPost(string stripeEmail, string stripeToken)
         {
             var customers = new CustomerService();
             var charges = new ChargeService();
@@ -50,6 +51,26 @@ namespace RecordStore.UI.Pages.Checkout
                 Description = "Nice",
                 Currency = "pln",
                 Customer = customer.Id,
+            });
+
+            await new CreateOrder(_ctx).Do(new CreateOrder.Request
+            {
+                StripeReference = charge.CustomerId, //OrderId
+
+                FirstName= CartOrder.CustomerInformation.FirstName,
+                LastName = CartOrder.CustomerInformation.LastName,
+                Email = CartOrder.CustomerInformation.Email,
+                PhoneNumber = CartOrder.CustomerInformation.PhoneNumber,
+                Addres1 = CartOrder.CustomerInformation.Addres1,
+                Addres2 = CartOrder.CustomerInformation.Addres2, 
+                City = CartOrder.CustomerInformation.City,
+                PostCode = CartOrder.CustomerInformation.PostCode,
+
+                Stocks = CartOrder.Products.Select(x => new CreateOrder.Stock
+                {
+                    StockId = x.StockId,
+                    Qty= x.Qty,
+                }).ToList()
             });
 
             return RedirectToPage("/Index");

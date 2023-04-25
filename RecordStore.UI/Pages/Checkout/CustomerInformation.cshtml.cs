@@ -7,13 +7,15 @@ namespace RecordStore.UI.Pages.Checkout
 {
     public class CustomerInformationModel : PageModel
     {
+        private IWebHostEnvironment _env;
+
+        public CustomerInformationModel(IWebHostEnvironment env)
+        {
+            _env = env;
+        }
+
         [BindProperty]
         public AddCustomerInformation.Request CustomerInformation { get; set; }
-
-        public CustomerInformationModel(IConfiguration config)
-        {
-            PublicKey = config["Stripe:PublicKey"].ToString();
-        }
 
         public string PublicKey { get; }
 
@@ -23,6 +25,20 @@ namespace RecordStore.UI.Pages.Checkout
 
             if(information == null) 
             {
+                if(_env.IsDevelopment())
+                {
+                    CustomerInformation = new AddCustomerInformation.Request
+                    {
+                        FirstName = "a",
+                        LastName = "b",
+                        Email = "c@c.com",
+                        PhoneNumber = "1",
+                        Addres1 = "e",
+                        Addres2 = "f",
+                        City = "g",
+                        PostCode = "h",
+                    };
+                }
                 return Page();
             }
             else 
