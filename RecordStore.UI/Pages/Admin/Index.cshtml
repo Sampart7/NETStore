@@ -26,7 +26,7 @@
                 <tr v-for="(product, index) in products" class="table-secondary">
                     <td>{{ product.id }}</td>
                     <td>{{ product.name }}</td>
-                    <td>{{ product.value }}$</td>
+                    <td>{{ product.value }} zł</td>
                     <td><button v-on:click="editProduct(product.id, index)">Edit</button></td>
                     <td><button v-on:click="deleteProduct(product.id, index)">Remove</button></td>
                 </tr>

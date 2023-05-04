@@ -43,7 +43,7 @@ namespace Shop.Application.Cart
                 .Select(x => new Response
                 {
                     Name = x.Product.Name,
-                    Value = $"$ {x.Product.Value.ToString("N2")}",
+                    Value = $"{x.Product.Value.ToString("N2")} zł",
                     StockId = x.Id,
                     Qty = cartList.FirstOrDefault(y => y.StockId == x.Id).Qty
                 })
