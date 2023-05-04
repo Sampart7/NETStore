@@ -37,7 +37,7 @@ namespace RecordStore.UI.Pages.Checkout
             var customers = new CustomerService();
             var charges = new ChargeService();
 
-            var CartOrder = new GetOrder(HttpContext.Session, _ctx).Do();
+            var CartOrder = new Shop.Application.Cart.GetOrder(HttpContext.Session, _ctx).Do();
 
             var customer = customers.Create(new CustomerCreateOptions
             {
@@ -55,7 +55,7 @@ namespace RecordStore.UI.Pages.Checkout
 
             await new CreateOrder(_ctx).Do(new CreateOrder.Request
             {
-                StripeReference = charge.CustomerId, //OrderId
+                StripeReference = charge.Id,
 
                 FirstName= CartOrder.CustomerInformation.FirstName,
                 LastName = CartOrder.CustomerInformation.LastName,

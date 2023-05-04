@@ -29,14 +29,14 @@ namespace RecordStore.UI.Pages.Checkout
                 {
                     CustomerInformation = new AddCustomerInformation.Request
                     {
-                        FirstName = "a",
-                        LastName = "b",
-                        Email = "c@c.com",
-                        PhoneNumber = "1",
-                        Addres1 = "e",
-                        Addres2 = "f",
-                        City = "g",
-                        PostCode = "h",
+                        FirstName = "Cusomer Name",
+                        LastName = "Cusomer Lastname",
+                        Email = "example@chester.com",
+                        PhoneNumber = "420692137",
+                        Addres1 = "Zary",
+                        Addres2 = "Zagan",
+                        City = "Zielona Gora",
+                        PostCode = "67-400",
                     };
                 }
                 return Page();
