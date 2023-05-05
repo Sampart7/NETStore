@@ -327,6 +327,10 @@ namespace Shop.Database.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -338,6 +342,30 @@ namespace Shop.Database.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("Stock");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Models.StockOnHold", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Qty")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StockId");
+
+                    b.ToTable("StocksOnHold");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -394,7 +422,7 @@ namespace Shop.Database.Migrations
             modelBuilder.Entity("Shop.Domain.Models.OrderStock", b =>
                 {
                     b.HasOne("Shop.Domain.Models.Order", "Order")
-                        .WithMany("OrderProducts")
+                        .WithMany("OrderStocks")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -421,9 +449,20 @@ namespace Shop.Database.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Shop.Domain.Models.StockOnHold", b =>
+                {
+                    b.HasOne("Shop.Domain.Models.Stock", "Stock")
+                        .WithMany()
+                        .HasForeignKey("StockId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Stock");
+                });
+
             modelBuilder.Entity("Shop.Domain.Models.Order", b =>
                 {
-                    b.Navigation("OrderProducts");
+                    b.Navigation("OrderStocks");
                 });
 
             modelBuilder.Entity("Shop.Domain.Models.Product", b =>
