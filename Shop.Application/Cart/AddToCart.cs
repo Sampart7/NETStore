@@ -31,7 +31,7 @@ namespace Shop.Application.Cart
         {
             var stockToHold = _ctx.Stock.Where(x => x.Id == request.StockId).FirstOrDefault();
 
-            if(stockToHold.Qty < request.Qty)
+            if (stockToHold.Qty < request.Qty)
             {
                 return false;
             }

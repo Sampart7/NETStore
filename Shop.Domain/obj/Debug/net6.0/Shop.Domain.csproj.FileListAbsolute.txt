@@ -10,3 +10,15 @@ C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Domain\obj\Debug\net6.0\Shop.
 C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Domain\obj\Debug\net6.0\refint\Shop.Domain.dll
 C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Domain\obj\Debug\net6.0\Shop.Domain.pdb
 C:\Users\Michał Janaszek\Desktop\RecordStore\Shop.Domain\obj\Debug\net6.0\ref\Shop.Domain.dll
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\bin\Debug\net6.0\Shop.Domain.deps.json
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\bin\Debug\net6.0\Shop.Domain.dll
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\bin\Debug\net6.0\Shop.Domain.pdb
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\obj\Debug\net6.0\Shop.Domain.csproj.AssemblyReference.cache
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\obj\Debug\net6.0\Shop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\obj\Debug\net6.0\Shop.Domain.AssemblyInfoInputs.cache
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\obj\Debug\net6.0\Shop.Domain.AssemblyInfo.cs
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\obj\Debug\net6.0\Shop.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\obj\Debug\net6.0\Shop.Domain.dll
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\obj\Debug\net6.0\refint\Shop.Domain.dll
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\obj\Debug\net6.0\Shop.Domain.pdb
+C:\Users\Michał Janaszek\Desktop\RecordStore-339dc8b15df99c25c5d0681960a4d94e08f1bd51\Shop.Domain\obj\Debug\net6.0\ref\Shop.Domain.dll

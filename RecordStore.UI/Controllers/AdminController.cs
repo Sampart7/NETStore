@@ -32,7 +32,7 @@ namespace RecordStore.UI.Controllers
         [HttpPut("products")]
         public async Task<IActionResult> UpdateProduct([FromBody] UpdateProduct.Request request) => Ok((await new UpdateProduct(_ctx).Do(request)));
 
-        //Stock Controller
+        //Stocks Controller
 
         [HttpGet("stocks")]
         public IActionResult GetStock() => Ok(new GetStock(_ctx).Do());

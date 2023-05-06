@@ -37,7 +37,7 @@ namespace RecordStore.UI.Pages
         {
             var stockAdded = await new AddToCart(HttpContext.Session, _ctx).Do(CartViewModel);
 
-            if (stockAdded)
+            if(stockAdded)
             {
                 return RedirectToPage("Cart");
             }
