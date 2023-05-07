@@ -354,6 +354,10 @@ namespace Shop.Database.Migrations
                     b.Property<int>("Qty")
                         .HasColumnType("int");
 
+                    b.Property<string>("SessionId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("StockId")
                         .HasColumnType("int");
 

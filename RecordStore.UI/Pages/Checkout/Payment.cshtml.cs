@@ -53,9 +53,13 @@ namespace RecordStore.UI.Pages.Checkout
                 Customer = customer.Id,
             });
 
+            var sessionId = HttpContext.Session.Id;
+
+
             await new CreateOrder(_ctx).Do(new CreateOrder.Request
             {
                 StripeReference = charge.Id,
+                SessionId = sessionId,
 
                 FirstName= CartOrder.CustomerInformation.FirstName,
                 LastName = CartOrder.CustomerInformation.LastName,

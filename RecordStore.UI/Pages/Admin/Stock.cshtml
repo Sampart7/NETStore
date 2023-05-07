@@ -29,36 +29,55 @@
     <div v-if="selectedProduct">
         <h2 class="title">SELECTED PRODUCT - {{ selectedProduct.description }}</h2>
         <table class="table">
-            <tr v-for="(stock, index) in selectedProduct.stock" class="table-secondary">
-                <td>
-                    <select class="custom-select" v-model="stock.description">
-                        <option selected> {{ stock.description }}</option>
-                        <option value="Small">Small</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Large">Large</option>
-                    </select>
-                </td>
-                <td><input class="input" type="number" v-model="stock.qty" /></td>
-                <td><button v-on:click="deleteStock(stock.id, index)">Delete Product</button></td>
-                <td><button v-on:click="updateStock">Update Product</button></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>SIZE</th>
+                    <th>QTY</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(stock, index) in selectedProduct.stock" class="table-secondary">
+                    <td>
+                        <select class="custom-select" v-model="stock.description">
+                            <option selected>{{ stock.description }}</option>
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                        </select>
+                    </td>
+                    <td><input class="input" type="number" v-model="stock.qty" /></td>
+                        <td><button v-on:click="deleteStock(stock.id, index)">Delete Product</button></td>
+                    <td><button v-on:click="updateStock">Update Product</button></td>
+                </tr>
+            </tbody>
         </table>
         <td><button v-on:click="updateStock">Update All Products</button></td>
 
         <h2 class="title">New Stock</h2>
         <table class="table">
-            <tr class="table-secondary">
-                <td>
-                    <select class="custom-select" v-model="newStock.description">
-                        <option selected> {{ newStock.description }}</option>
-                        <option value="Small">Small</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Large">Large</option>
-                    </select>
-                </td>
-                <td><input class="input" type="number" v-model="newStock.qty" /></td>
-                <td><button v-on:click="addStock">Add Product</button></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>SIZE</th>
+                    <th>QTY</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-secondary">
+                    <td>
+                        <select class="custom-select" v-model="newStock.description">
+                            <option selected> {{ newStock.description }}</option>
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                        </select>
+                    </td>
+                    <td><input class="input" type="number" v-model="newStock.qty" /></td>
+                    <td><button v-on:click="addStock">Add Product</button></td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>
