@@ -42,14 +42,14 @@ namespace Shop.Application.Cart
                 StockId = stockToHold.Id,
                 SessionId = _session.Id,
                 Qty = stockToHold.Qty,
-                ExpiryDate = DateTime.Now.AddMinutes(20)
+                ExpiryDate = DateTime.Now.AddMinutes(5)
             });
 
             stockToHold.Qty = stockToHold.Qty - request.Qty;
 
             foreach(var stock in stockOnHold) 
             {
-                stock.ExpiryDate= DateTime.Now.AddMinutes(20);
+                stock.ExpiryDate= DateTime.Now.AddMinutes(5);
             }
 
             await _ctx.SaveChangesAsync();

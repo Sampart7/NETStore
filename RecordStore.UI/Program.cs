@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Shop.Database;
 using Stripe;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,20 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(configuration["DefaultConnection"]);
+});
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequiredLength = 6;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+})
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddAuthorization(options => 
+{
+    options.AddPolicy("Admin", policy => policy.RequireClaim("Admin"));
 });
 
 builder.Services.AddControllersWithViews();
@@ -35,6 +51,34 @@ service.Create(options);
 
 var app = builder.Build();
 
+try
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+
+        context.Database.EnsureCreated();
+        if (!context.Users.Any())
+        {
+            var adminUser = new IdentityUser()
+            {
+                UserName = "Admin",
+            };
+
+            userManager.CreateAsync(adminUser, "password").GetAwaiter().GetResult();
+
+            var adminClaim = new Claim("Role", "Admin");
+            
+            userManager.AddClaimAsync(adminUser, adminClaim).GetAwaiter().GetResult();
+        }
+    }
+}
+catch(Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -57,5 +101,7 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllers();
     endpoints.MapRazorPages();
 });
+
+app.UseAuthentication();
 
 app.Run();
