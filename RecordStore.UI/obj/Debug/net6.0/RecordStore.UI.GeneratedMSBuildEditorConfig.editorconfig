@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Michał Janaszek\Desktop\RecordStore\RecordStore.UI
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Michał Janaszek/Desktop/RecordStore/RecordStore.UI/Pages/Accounts/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudHNcbG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Michał Janaszek/Desktop/RecordStore/RecordStore.UI/Pages/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
