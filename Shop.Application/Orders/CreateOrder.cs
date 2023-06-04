@@ -28,8 +28,8 @@ namespace Shop.Application.Orders
             public string LastName { get; set; }
             public string Email { get; set; }
             public string PhoneNumber { get; set; }
-            public string Addres1 { get; set; }
-            public string Addres2 { get; set; }
+            public string Address1 { get; set; }
+            public string Address2 { get; set; }
             public string City { get; set; }
             public string PostCode { get; set; }
             public List<Stock> Stocks { get; set; }
@@ -56,8 +56,8 @@ namespace Shop.Application.Orders
                 LastName = request.LastName,
                 Email = request.Email,
                 PhoneNumber = request.PhoneNumber,
-                Addres1 = request.Addres1,
-                Addres2 = request.Addres2,
+                Address1 = request.Address1,
+                Address2 = request.Address2,
                 City = request.City,
                 PostCode = request.PostCode,
 

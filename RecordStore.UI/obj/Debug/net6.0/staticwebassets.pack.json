@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\js\\admin\\main.js"
     },
     {
+      "Id": "C:\\Users\\Michał Janaszek\\Desktop\\RecordStore\\RecordStore.UI\\wwwroot\\js\\admin\\orders.js",
+      "PackagePath": "staticwebassets\\js\\admin\\orders.js"
+    },
+    {
       "Id": "C:\\Users\\Michał Janaszek\\Desktop\\RecordStore\\RecordStore.UI\\wwwroot\\js\\admin\\products.js",
       "PackagePath": "staticwebassets\\js\\admin\\products.js"
     },

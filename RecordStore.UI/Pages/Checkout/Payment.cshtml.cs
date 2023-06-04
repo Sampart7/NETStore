@@ -65,8 +65,8 @@ namespace RecordStore.UI.Pages.Checkout
                 LastName = CartOrder.CustomerInformation.LastName,
                 Email = CartOrder.CustomerInformation.Email,
                 PhoneNumber = CartOrder.CustomerInformation.PhoneNumber,
-                Addres1 = CartOrder.CustomerInformation.Addres1,
-                Addres2 = CartOrder.CustomerInformation.Addres2, 
+                Address1 = CartOrder.CustomerInformation.Addres1,
+                Address2 = CartOrder.CustomerInformation.Addres2, 
                 City = CartOrder.CustomerInformation.City,
                 PostCode = CartOrder.CustomerInformation.PostCode,
 

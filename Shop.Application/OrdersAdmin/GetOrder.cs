@@ -1,12 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shop.Database;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Shop.Application.Orders
+namespace Shop.Application.OrdersAdmin
 {
     public class GetOrder
     {
@@ -19,18 +14,21 @@ namespace Shop.Application.Orders
 
         public class Response
         {
+            public int Id { get; set; }
             public string OrderRef { get; set; }
+            public string StripeReference { get; set; }
+
             public string FirstName { get; set; }
             public string LastName { get; set; }
             public string Email { get; set; }
             public string PhoneNumber { get; set; }
+
             public string Address1 { get; set; }
             public string Address2 { get; set; }
             public string City { get; set; }
             public string PostCode { get; set; }
 
             public IEnumerable<Product> Products { get; set; }
-            public string TotalValue { get; set; }
         }
 
         public class Product
@@ -42,15 +40,18 @@ namespace Shop.Application.Orders
             public string StockDescription { get; set; }
         }
 
-        public Response Do(string reference) =>
+        public Response Do(int id) =>
             _ctx.Orders
-                .Where(x => x.OrderRef == reference)
+                .Where(x => x.Id == id)
                 .Include(x => x.OrderStocks)
                 .ThenInclude(x => x.Stock)
                 .ThenInclude(x => x.Product)
                 .Select(x => new Response
                 {
+                    Id = x.Id,
                     OrderRef = x.OrderRef,
+                    StripeReference = x.StripeReference,
+
                     FirstName = x.FirstName,
                     LastName = x.LastName,
                     Email = x.Email,
@@ -64,12 +65,9 @@ namespace Shop.Application.Orders
                     {
                         Name = y.Stock.Product.Name,
                         Description = y.Stock.Product.Description,
-                        Value = $"PLN {y.Stock.Product.Value.ToString("N2")}",
                         Qty = y.Qty,
                         StockDescription = y.Stock.Description
                     }),
-
-                    TotalValue = x.OrderStocks.Sum(y => y.Stock.Product.Value).ToString("N2")
                 })
                 .FirstOrDefault();
     }

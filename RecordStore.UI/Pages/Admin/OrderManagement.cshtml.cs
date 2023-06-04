@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace RecordStore.UI.Pages.Admin
 {
-    public class OrdersModel : PageModel
+    public class OrderManagementModel : PageModel
     {
         public void OnGet()
         {
