@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.UsersAdmin;
 using Shop.Database;
 using Stripe;
 using System.Security.Claims;
@@ -40,6 +41,7 @@ builder.Services
     .AddRazorPagesOptions(options =>
     {
         options.Conventions.AuthorizeFolder("/Admin");
+        options.Conventions.AuthorizePage("/Admin/ConfigureUsers", "Admin");
     });
 
 builder.Services.AddControllersWithViews();
@@ -51,6 +53,8 @@ builder.Services.AddSession(options =>
 });
 
 StripeConfiguration.ApiKey = configuration.GetSection("Stripe")["SecretKey"];
+
+builder.Services.AddTransient<CreateUser>();
 
 var options = new PaymentIntentCreateOptions
 {

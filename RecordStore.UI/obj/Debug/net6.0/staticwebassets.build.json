@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fCKey6v264guaI3LDs8iYFKgKde0Y75oVkyKLtNvC0s=",
+  "Hash": "RCdHmh15sGxnYLkeTqMH7XfRZg74JXlXw/2UHnuVKzw=",
   "Source": "RecordStore.UI",
   "BasePath": "_content/RecordStore.UI",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\admin\\stock.js"
+    },
+    {
+      "Identity": "C:\\Users\\Michał Janaszek\\Desktop\\RecordStore\\RecordStore.UI\\wwwroot\\js\\admin\\users.js",
+      "SourceId": "RecordStore.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Michał Janaszek\\Desktop\\RecordStore\\RecordStore.UI\\wwwroot\\",
+      "BasePath": "_content/RecordStore.UI",
+      "RelativePath": "js/admin/users.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\admin\\users.js"
     },
     {
       "Identity": "C:\\Users\\Michał Janaszek\\Desktop\\RecordStore\\RecordStore.UI\\wwwroot\\js\\site.js",

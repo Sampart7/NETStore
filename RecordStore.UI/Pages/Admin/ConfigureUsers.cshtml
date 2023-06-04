@@ -1,0 +1,15 @@
+﻿@page
+@model RecordStore.UI.Pages.Admin.ConfigureUsersModel
+@{
+}
+
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="~/js/admin/users.js"></script>
+}
+
+<div class="container my-5" id="app">
+    <input v-model="username" />
+    <button v-on:click="createUser()">Create</button>
+</div>
