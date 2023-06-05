@@ -4,7 +4,15 @@
 }
 
 <form method="post">
-    <input asp-for="Input.Username" />
-    <input asp-for="Input.Password" />
-    <input type="submit" name="name" value="Sing In" />  
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">User Name</span>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" asp-for="Input.Username"/>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" asp-for="Input.Password" />
+    </div>
+
+    <button type="submit" name="name">Sing In</button> 
 </form>

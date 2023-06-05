@@ -1,9 +1,4 @@
 ﻿using Shop.Database;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shop.Application.OrdersAdmin
 {
@@ -16,7 +11,7 @@ namespace Shop.Application.OrdersAdmin
             _ctx = ctx;
         }
 
-        public async Task<bool> Do(int id)
+        public async Task<bool> DoAsync(int id)
         {
             var order = _ctx.Orders.FirstOrDefault(x => x.Id == id);
 

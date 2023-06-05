@@ -22,7 +22,7 @@ namespace RecordStore.UI.Controllers
         [HttpGet("{id}")]
         public IActionResult GetOrder(int id) => Ok(new GetOrder(_ctx).Do(id));
 
-        [HttpPost("{id}")]
-        public async Task<IActionResult> UpdateOrder(int id) => Ok((await new UpdateOrder(_ctx).Do(id)));
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateOrder(int id) => Ok((await new UpdateOrder(_ctx).DoAsync(id)));
     }
 }

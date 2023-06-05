@@ -8,28 +8,45 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="~/js/admin/orders.js"></script>
 }
+<h1>ORDERS</h1>
 
 <div id="app">
     <div v-if="selectedOrder === null">
-        <div class="tabs is-centered">
-            <ul>
-                <li v-bind:class="{'is-active': status === 0}"><a v-on:click="status = 0">Pending</a></li>
-                <li v-bind:class="{'is-active': status === 1}"><a v-on:click="status = 1">Packed</a></li>
-                <li v-bind:class="{'is-active': status === 2}"><a v-on:click="status = 2">Shipped</a></li>
-            </ul>
-        </div>
-        <div v-if="orders.length > 0">
-            <p v-for="order in orders">
-                <a v-on:click="selectOrder(order.id)">{{order.orderRef}} - {{order.email}}</a>
-            </p>
-        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th v-bind:class="{'is-active': status === 0}"><button v-on:click="status = 0">Pending</button></th>
+                    <th v-bind:class="{'is-active': status === 1}"><button v-on:click="status = 1">Packed</button></th>
+                    <th v-bind:class="{'is-active': status === 2}"><button v-on:click="status = 2">Shipped</button></th>
+                </tr>
+            </thead>
+            <div v-if="orders.length > 0">
+                <tbody>
+                        <tr v-for="order in orders" class="table-secondary">
+                            <td><a v-on:click="selectOrder(order.id)">{{order.orderRef}}</a></td>
+                            <td></td>
+                            <td><a v-on:click="selectOrder(order.id)">{{order.email}}</a></td>
+                        </tr>
+                </tbody>
+            </div>
+        </table>
     </div>
+
     <div v-else>
-        <p>
-            <button v-on:click="exitOrder()">Exit</button>
-        </p>
-        <p class="title">{{selectedOrder.orderRef}}</p>
-        <p class="subtitle">{{selectedOrder.email}}</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><button v-on:click="exitOrder()">Exit</button></th>
+                    <th></th>
+                </tr>
+            </thead>
+        <tbody class="table-secondary">
+                <tr>
+                    <td class="title">{{selectedOrder.orderRef}}</td>
+                    <td class="subtitle">{{selectedOrder.email}}</td>
+                </tr>
+            </tbody>
+        </table>
         <button v-on:click="updateOrder()">Process</button>
     </div>
 </div>

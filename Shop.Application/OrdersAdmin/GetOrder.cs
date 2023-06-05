@@ -35,7 +35,6 @@ namespace Shop.Application.OrdersAdmin
         {
             public string Name { get; set; }
             public string Description { get; set; }
-            public string Value { get; set; }
             public int Qty { get; set; }
             public string StockDescription { get; set; }
         }
